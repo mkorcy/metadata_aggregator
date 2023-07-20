@@ -20,9 +20,11 @@ jobs:
 
       - name: Update _data/projects.yml
         run: node updateData.js
-      
+     
       - name: Commit changes
-        run: |
-          git config --local user.email "mkorcy@gmail.com"
-          git commit -am "Update site"
-          git push
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Mike Korcynski
+          author_email: mkorcy@gmail.com
+          message: 'update directory data'
+          add: '*.yml'
