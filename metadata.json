@@ -1,0 +1,12 @@
+{
+    "projectName": "Sample Project",
+    "description": "This is a sample project for demonstration purposes.",
+    "repositoryUrl": "https://github.com/mkorcy/sample_metadata_repo",
+    "projectType": "Web Application",
+    "programmingLanguages": ["JavaScript", "HTML", "CSS"],
+    "frameworksAndLibraries": ["React", "Redux", "Bootstrap"],
+    "databases": ["MongoDB"],
+    "apisUsed": ["Sample API"],
+    "hostingPlatform": "GitHub Pages",
+    "authorName": "Mike Korcynski",
+}
