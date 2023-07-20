@@ -1,0 +1,11 @@
+{
+    "projectName": "Tufts Project 2",
+    "description": "Another project for demonstration purposes.",
+    "repositoryUrl": "https://github.com/mkorcy/sample_metadata_repo2",
+    "projectType": "Middleware",
+    "programmingLanguages": ["Python"],
+    "frameworksAndLibraries": ["Bootstrap"],
+    "databases": ["MariaDB"],
+    "hostingPlatform": "GitHub Pages",
+    "authorName": "Mike Korcynski"
+}
