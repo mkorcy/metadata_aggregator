@@ -11,12 +11,39 @@ title: Our Projects
 This page lists all of the projects in our directory.
 
 {% for project in site.data.projects %}
-## [{{ project.projectName }}]({{ project.projectType }})
 
-**Author**: {{ project.author }}
+## [{{ project[1].projectName }}]({{ project[1].repositoryUrl }})
 
-**Description**: {{ project.description }}
+**Author**: {{ project[1].authorName }}
 
----
+**Description**: {{ project[1].description }}
+
+**Project Type**: {{ project[1].projectType }}
+
+**Programming Languages**:
+
+{% for language in project[1].programmingLanguages %}
+- {{ language }}
 {% endfor %}
----
+
+**Frameworks and Libraries**:
+
+{% for framework in project[1].frameworksAndLibraries %}
+- {{ framework }}
+{% endfor %}
+
+**Databases**:
+
+{% for database in project[1].databases %}
+- {{ database }}
+{% endfor %}
+
+**APIs Used**:
+
+{% for api in project[1].apisUsed %}
+- {{ api }}
+{% endfor %}
+
+**Hosting Platform**: {{ project[1].hostingPlatform }}
+
+{% endfor %}
