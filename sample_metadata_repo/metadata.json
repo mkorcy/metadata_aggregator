@@ -8,5 +8,5 @@
     "databases": ["MongoDB"],
     "apisUsed": ["Sample API"],
     "hostingPlatform": "GitHub Pages",
-    "authorName": "Mike Korcynski",
+    "authorName": "Mike Korcynski"
 }
