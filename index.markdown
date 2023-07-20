@@ -11,7 +11,7 @@ title: Our Projects
 This page lists all of the projects in our directory.
 
 {% for project in site.data.projects %}
-## [{{ project.name }}]({{ project.url }})
+## [{{ project.projectName }}]({{ project.projectType }})
 
 **Author**: {{ project.author }}
 
