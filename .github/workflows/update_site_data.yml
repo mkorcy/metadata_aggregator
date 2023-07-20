@@ -1,0 +1,48 @@
+name: Update Site
+
+on:
+  push:
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install js-yaml fs
+
+      - name: Update _data/projects.yml
+        run: |
+          const fs = require('fs');
+          const yaml = require('js-yaml');
+
+          const projects = {};
+
+          // read all metadata.json files
+          const projectDirs = fs.readdirSync('.', { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => dirent.name);
+
+          for (const dir of projectDirs) {
+            const metadataFile = `${dir}/metadata.json`;
+            if (fs.existsSync(metadataFile)) {
+              const metadata = JSON.parse(fs.readFileSync(metadataFile, 'utf8'));
+              projects[dir] = metadata;
+            }
+          }
+
+          // write to _data/projects.yml
+          fs.writeFileSync('_data/projects.yml', yaml.dump(projects));
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "mkorcy@gmail.com"
+          git commit -am "Update site"
+          git push
